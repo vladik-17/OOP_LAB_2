@@ -1,33 +1,33 @@
 <UserControl x:Class="BindingsAndTriggers.Views.DefaultBindView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:BindingsAndTriggers.Localization">
 
     <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24">
         <StackPanel MaxWidth="700" HorizontalAlignment="Left">
 
-            <TextBlock Style="{StaticResource PageTitle}" Text="Привязка по умолчанию (Default)"/>
+            <TextBlock Style="{StaticResource PageTitle}"
+                       Text="{Binding [Default_Title], Source={x:Static loc:Localizer.Instance}}"/>
 
-            <!-- Описание -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="Что такое Default-привязка?"/>
-                    <TextBlock TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}">
-                        Режим привязки по умолчанию зависит от элемента управления.
-                        Для TextBox — TwoWay (обновляется при потере фокуса).
-                        Для Slider — TwoWay (мгновенно).
-                        Для CheckBox.IsChecked — TwoWay.
-                        Для TextBlock — OneWay (только чтение).
-                    </TextBlock>
+                    <TextBlock Style="{StaticResource CardTitle}"
+                               Text="{Binding [Default_WhatTitle], Source={x:Static loc:Localizer.Instance}}"/>
+                    <TextBlock TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}"
+                               Text="{Binding [Default_WhatDesc], Source={x:Static loc:Localizer.Instance}}"/>
                 </StackPanel>
             </Border>
 
             <!-- TextBox -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="TextBox — Default (TwoWay, LostFocus)"/>
-                    <TextBlock Style="{StaticResource Label}" Text="Введите текст и нажмите Tab или кликните в другое место:"/>
+                    <TextBlock Style="{StaticResource CardTitle}"
+                               Text="{Binding [Default_TextBoxTitle], Source={x:Static loc:Localizer.Instance}}"/>
+                    <TextBlock Style="{StaticResource Label}"
+                               Text="{Binding [Default_TextBoxHint], Source={x:Static loc:Localizer.Instance}}"/>
                     <TextBox Text="{Binding InputText}" Width="350" HorizontalAlignment="Left"/>
-                    <TextBlock Style="{StaticResource Label}" Margin="0,12,0,4" Text="Значение в ViewModel:"/>
+                    <TextBlock Style="{StaticResource Label}" Margin="0,12,0,4"
+                               Text="{Binding [Default_VMValue], Source={x:Static loc:Localizer.Instance}}"/>
                     <TextBlock Style="{StaticResource ResultText}"
                                Text="{Binding InputText, Mode=OneWay}"
                                FontWeight="SemiBold"/>
@@ -37,13 +37,15 @@
             <!-- Slider -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="Slider — Default (TwoWay)"/>
-                    <TextBlock Style="{StaticResource Label}" Text="Перемещайте ползунок:"/>
+                    <TextBlock Style="{StaticResource CardTitle}"
+                               Text="{Binding [Default_SliderTitle], Source={x:Static loc:Localizer.Instance}}"/>
+                    <TextBlock Style="{StaticResource Label}"
+                               Text="{Binding [Default_SliderHint], Source={x:Static loc:Localizer.Instance}}"/>
                     <Slider Minimum="0" Maximum="100"
                             Value="{Binding SliderValue}"
                             Width="350" HorizontalAlignment="Left"/>
                     <TextBlock Margin="0,8,0,0">
-                        <Run Text="Значение: "/>
+                        <Run Text="{Binding [Default_SliderValue], Source={x:Static loc:Localizer.Instance}}"/>
                         <Run Text="{Binding SliderValue, Mode=OneWay}"
                              FontWeight="Bold" Foreground="{StaticResource PrimaryBrush}"/>
                     </TextBlock>
@@ -58,10 +60,12 @@
             <!-- CheckBox -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="CheckBox — Default (TwoWay)"/>
-                    <CheckBox IsChecked="{Binding IsChecked}" Content="Активировать"/>
+                    <TextBlock Style="{StaticResource CardTitle}"
+                               Text="{Binding [Default_CheckTitle], Source={x:Static loc:Localizer.Instance}}"/>
+                    <CheckBox IsChecked="{Binding IsChecked}"
+                              Content="{Binding [Default_CheckContent], Source={x:Static loc:Localizer.Instance}}"/>
                     <TextBlock Style="{StaticResource ResultText}" Margin="0,8,0,0">
-                        <Run Text="Статус: "/>
+                        <Run Text="{Binding [Default_Status], Source={x:Static loc:Localizer.Instance}}"/>
                         <Run Text="{Binding CheckStatus, Mode=OneWay}" FontWeight="Bold"/>
                     </TextBlock>
                 </StackPanel>
