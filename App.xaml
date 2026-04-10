@@ -6,6 +6,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/AppStyles.xaml"/>
+                <!-- Языковой словарь по умолчанию — русский -->
+                <ResourceDictionary Source="Localization/Strings.ru.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

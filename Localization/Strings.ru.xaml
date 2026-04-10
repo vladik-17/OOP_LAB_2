@@ -1,0 +1,90 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Общее -->
+    <sys:String x:Key="AppTitle">Лабораторная 1 Петров В.А 24.16</sys:String>
+    <sys:String x:Key="AppSubtitle"> — привязки и триггеры</sys:String>
+    <sys:String x:Key="LangLabel">Язык:</sys:String>
+    <sys:String x:Key="Tab_Default">По умолчанию</sys:String>
+    <sys:String x:Key="Tab_TwoWay">Двухсторонняя</sys:String>
+    <sys:String x:Key="Tab_OneTime">Одноразовая</sys:String>
+    <sys:String x:Key="Tab_OneWay">Односторонние</sys:String>
+    <sys:String x:Key="Tab_Triggers">Триггеры</sys:String>
+
+    <!-- Привязка по умолчанию -->
+    <sys:String x:Key="Default_Title">Привязка по умолчанию (Default)</sys:String>
+    <sys:String x:Key="Default_WhatTitle">Что такое Default-привязка?</sys:String>
+    <sys:String x:Key="Default_WhatDesc">Режим привязки по умолчанию зависит от элемента управления.&#10;Для TextBox — TwoWay (обновляется при потере фокуса).&#10;Для Slider — TwoWay (мгновенно).&#10;Для CheckBox.IsChecked — TwoWay.&#10;Для TextBlock — OneWay (только чтение).</sys:String>
+    <sys:String x:Key="Default_TextBoxTitle">TextBox — Default (TwoWay, LostFocus)</sys:String>
+    <sys:String x:Key="Default_TextBoxHint">Введите текст и нажмите Tab или кликните в другое место:</sys:String>
+    <sys:String x:Key="Default_VMValue">Значение в ViewModel:</sys:String>
+    <sys:String x:Key="Default_SliderTitle">Slider — Default (TwoWay)</sys:String>
+    <sys:String x:Key="Default_SliderHint">Перемещайте ползунок:</sys:String>
+    <sys:String x:Key="Default_SliderValue">Значение: </sys:String>
+    <sys:String x:Key="Default_CheckTitle">CheckBox — Default (TwoWay)</sys:String>
+    <sys:String x:Key="Default_CheckContent">Активировать</sys:String>
+    <sys:String x:Key="Default_Status">Статус: </sys:String>
+    <sys:String x:Key="Status_Checked">Отмечено</sys:String>
+    <sys:String x:Key="Status_Unchecked">Не отмечено</sys:String>
+
+    <!-- Двухсторонняя привязка -->
+    <sys:String x:Key="TwoWay_Title">Двухсторонняя привязка (TwoWay)</sys:String>
+    <sys:String x:Key="TwoWay_HowTitle">Как работает TwoWay?</sys:String>
+    <sys:String x:Key="TwoWay_HowDesc">Изменения передаются в обе стороны: UI → ViewModel и ViewModel → UI.&#10;Если одно свойство привязано к нескольким элементам, они все синхронизируются.</sys:String>
+    <sys:String x:Key="TwoWay_MultiTitle">Несколько TextBox — одно свойство</sys:String>
+    <sys:String x:Key="TwoWay_MultiHint">Оба поля привязаны к SharedText. Измените одно — обновится второе после снятия фокуса:</sys:String>
+    <sys:String x:Key="TwoWay_Field1">Поле 1</sys:String>
+    <sys:String x:Key="TwoWay_Field2">Поле 2</sys:String>
+    <sys:String x:Key="TwoWay_VMValue">Значение в ViewModel:</sys:String>
+    <sys:String x:Key="TwoWay_SliderTitle">Slider ↔ TextBox</sys:String>
+    <sys:String x:Key="TwoWay_SliderHint">Двигайте ползунок или введите число в поле:</sys:String>
+    <sys:String x:Key="TwoWay_ComboTitle">ComboBox — выбор цвета</sys:String>
+    <sys:String x:Key="TwoWay_ComboHint">Выберите цвет из списка — прямоугольник изменит цвет:</sys:String>
+
+    <!-- Одноразовая привязка -->
+    <sys:String x:Key="OneTime_Title">Одноразовая привязка (OneTime)</sys:String>
+    <sys:String x:Key="OneTime_HowTitle">Как работает OneTime?</sys:String>
+    <sys:String x:Key="OneTime_HowDesc">Значение читается из ViewModel один раз — при инициализации элемента.&#10;Последующие изменения в VM не передаются в UI. Используется для&#10;статичных данных: заголовков, начальных значений, неизменяемых списков.</sys:String>
+    <sys:String x:Key="OneTime_CompareTitle">Сравнение: OneTime vs OneWay</sys:String>
+    <sys:String x:Key="OneTime_CompareHint">Нажмите кнопку — ViewModel обновится. Посмотрите, какие поля изменятся:</sys:String>
+    <sys:String x:Key="OneTime_Label">OneTime (не обновляется после загрузки):</sys:String>
+    <sys:String x:Key="OneWay_CompareLabel">OneWay (обновляется при каждом изменении VM):</sys:String>
+    <sys:String x:Key="OneTime_Button">Обновить ViewModel</sys:String>
+    <sys:String x:Key="OneTime_WhenTitle">Когда применять OneTime?</sys:String>
+    <sys:String x:Key="OneTime_WhenDesc">• Заголовки и подписи, которые не меняются во время работы&#10;• Начальные значения из конфигурации или БД&#10;• Источники данных ComboBox/ListBox с неизменяемым списком&#10;• Экономит ресурсы: нет подписки на INotifyPropertyChanged</sys:String>
+
+    <!-- Односторонние привязки -->
+    <sys:String x:Key="OneWay_Title">Односторонние привязки (OneWay / OneWayToSource)</sys:String>
+    <sys:String x:Key="OneWay_TypesTitle">Два варианта односторонней привязки</sys:String>
+    <sys:String x:Key="OneWay_Desc">VM → UI. Элемент только отображает данные из VM. Подходит для TextBlock, ProgressBar, Label.</sys:String>
+    <sys:String x:Key="OneWayToSource_Desc">UI → VM. Элемент только записывает данные в VM. VM не отправляет значение обратно в UI.</sys:String>
+    <sys:String x:Key="OneWay_SectionTitle">OneWay: ViewModel → UI</sys:String>
+    <sys:String x:Key="OneWay_SectionHint">Кнопка меняет VM. UI (OneWay) обновляется. Вручную текст изменить нельзя:</sys:String>
+    <sys:String x:Key="OneWay_ProgressHint">Прогресс (обновляется таймером каждую секунду):</sys:String>
+    <sys:String x:Key="OneWay_Button">Обновить текст из VM</sys:String>
+    <sys:String x:Key="OneWayToSource_Title">OneWayToSource: UI → ViewModel</sys:String>
+    <sys:String x:Key="OneWayToSource_Hint">Вводите текст — он записывается в VM. VM не отправляет его обратно в TextBox (поэтому поле не очищается из кода):</sys:String>
+    <sys:String x:Key="OneWayToSource_VMValue">Значение в ViewModel (OneWay из VM):</sys:String>
+
+    <!-- Триггеры -->
+    <sys:String x:Key="Triggers_Title">Триггеры (Triggers)</sys:String>
+    <sys:String x:Key="Triggers_TypesTitle">Виды триггеров в WPF</sys:String>
+    <sys:String x:Key="Triggers_TypesDesc">• Trigger — реагирует на свойство самого элемента (IsMouseOver, IsFocused)&#10;• DataTrigger — реагирует на значение привязки к ViewModel&#10;• MultiDataTrigger — срабатывает при нескольких условиях одновременно</sys:String>
+    <sys:String x:Key="Triggers_1Title">1. Trigger — свойство элемента</sys:String>
+    <sys:String x:Key="Triggers_1Hint">Наведите мышь на карточку — Trigger реагирует на IsMouseOver:</sys:String>
+    <sys:String x:Key="Triggers_HoverText">Наведите курсор сюда</sys:String>
+    <sys:String x:Key="Triggers_HoverActive">Trigger сработал! ✓</sys:String>
+    <sys:String x:Key="Triggers_2Title">2. DataTrigger — значение из ViewModel</sys:String>
+    <sys:String x:Key="Triggers_2Hint">Введите слово «ошибка» — DataTrigger изменит оформление:</sys:String>
+    <sys:String x:Key="Triggers_OK">✓ Всё в порядке</sys:String>
+    <sys:String x:Key="Triggers_Error">✗ Обнаружена ошибка!</sys:String>
+    <sys:String x:Key="Triggers_ScoreHint">DataTrigger + конвертер: оценка меняет цвет бейджа:</sys:String>
+    <sys:String x:Key="Triggers_ScoreSuffix"> баллов</sys:String>
+    <sys:String x:Key="Triggers_3Title">3. MultiDataTrigger — несколько условий</sys:String>
+    <sys:String x:Key="Triggers_3Hint">Отметьте оба флажка одновременно — сработает MultiDataTrigger:</sys:String>
+    <sys:String x:Key="Triggers_Bold">Жирный</sys:String>
+    <sys:String x:Key="Triggers_Italic">Курсив</sys:String>
+    <sys:String x:Key="Triggers_Sample">Образец текста</sys:String>
+
+</ResourceDictionary>

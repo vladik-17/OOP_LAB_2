@@ -1,0 +1,90 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- General -->
+    <sys:String x:Key="AppTitle">Laboratory 1 Petrov V.A. 24.16</sys:String>
+    <sys:String x:Key="AppSubtitle"> — bindings and triggers</sys:String>
+    <sys:String x:Key="LangLabel">Language:</sys:String>
+    <sys:String x:Key="Tab_Default">Default</sys:String>
+    <sys:String x:Key="Tab_TwoWay">Two-Way</sys:String>
+    <sys:String x:Key="Tab_OneTime">One-Time</sys:String>
+    <sys:String x:Key="Tab_OneWay">One-Way</sys:String>
+    <sys:String x:Key="Tab_Triggers">Triggers</sys:String>
+
+    <!-- Default Binding -->
+    <sys:String x:Key="Default_Title">Default Binding (Default)</sys:String>
+    <sys:String x:Key="Default_WhatTitle">What is Default binding?</sys:String>
+    <sys:String x:Key="Default_WhatDesc">The default binding mode depends on the control type.&#10;For TextBox — TwoWay (updates on focus loss).&#10;For Slider — TwoWay (immediate).&#10;For CheckBox.IsChecked — TwoWay.&#10;For TextBlock — OneWay (read-only).</sys:String>
+    <sys:String x:Key="Default_TextBoxTitle">TextBox — Default (TwoWay, LostFocus)</sys:String>
+    <sys:String x:Key="Default_TextBoxHint">Enter text and press Tab or click elsewhere:</sys:String>
+    <sys:String x:Key="Default_VMValue">Value in ViewModel:</sys:String>
+    <sys:String x:Key="Default_SliderTitle">Slider — Default (TwoWay)</sys:String>
+    <sys:String x:Key="Default_SliderHint">Move the slider:</sys:String>
+    <sys:String x:Key="Default_SliderValue">Value: </sys:String>
+    <sys:String x:Key="Default_CheckTitle">CheckBox — Default (TwoWay)</sys:String>
+    <sys:String x:Key="Default_CheckContent">Activate</sys:String>
+    <sys:String x:Key="Default_Status">Status: </sys:String>
+    <sys:String x:Key="Status_Checked">Checked</sys:String>
+    <sys:String x:Key="Status_Unchecked">Unchecked</sys:String>
+
+    <!-- TwoWay Binding -->
+    <sys:String x:Key="TwoWay_Title">Two-Way Binding (TwoWay)</sys:String>
+    <sys:String x:Key="TwoWay_HowTitle">How does TwoWay work?</sys:String>
+    <sys:String x:Key="TwoWay_HowDesc">Changes flow in both directions: UI → ViewModel and ViewModel → UI.&#10;If one property is bound to multiple elements, they all stay in sync.</sys:String>
+    <sys:String x:Key="TwoWay_MultiTitle">Multiple TextBoxes — one property</sys:String>
+    <sys:String x:Key="TwoWay_MultiHint">Both fields are bound to SharedText. Change one — the other updates on focus loss:</sys:String>
+    <sys:String x:Key="TwoWay_Field1">Field 1</sys:String>
+    <sys:String x:Key="TwoWay_Field2">Field 2</sys:String>
+    <sys:String x:Key="TwoWay_VMValue">Value in ViewModel:</sys:String>
+    <sys:String x:Key="TwoWay_SliderTitle">Slider ↔ TextBox</sys:String>
+    <sys:String x:Key="TwoWay_SliderHint">Move the slider or enter a number:</sys:String>
+    <sys:String x:Key="TwoWay_ComboTitle">ComboBox — color selection</sys:String>
+    <sys:String x:Key="TwoWay_ComboHint">Select a color — the rectangle will change color:</sys:String>
+
+    <!-- OneTime Binding -->
+    <sys:String x:Key="OneTime_Title">One-Time Binding (OneTime)</sys:String>
+    <sys:String x:Key="OneTime_HowTitle">How does OneTime work?</sys:String>
+    <sys:String x:Key="OneTime_HowDesc">The value is read from ViewModel once — at element initialization.&#10;Subsequent VM changes are not passed to the UI. Used for&#10;static data: headers, initial values, immutable lists.</sys:String>
+    <sys:String x:Key="OneTime_CompareTitle">Comparison: OneTime vs OneWay</sys:String>
+    <sys:String x:Key="OneTime_CompareHint">Click the button — ViewModel updates. See which fields change:</sys:String>
+    <sys:String x:Key="OneTime_Label">OneTime (does not update after load):</sys:String>
+    <sys:String x:Key="OneWay_CompareLabel">OneWay (updates on each VM change):</sys:String>
+    <sys:String x:Key="OneTime_Button">Update ViewModel</sys:String>
+    <sys:String x:Key="OneTime_WhenTitle">When to use OneTime?</sys:String>
+    <sys:String x:Key="OneTime_WhenDesc">• Headers and labels that do not change at runtime&#10;• Initial values from config or database&#10;• ComboBox/ListBox sources with immutable lists&#10;• Saves resources: no INotifyPropertyChanged subscription</sys:String>
+
+    <!-- OneWay Bindings -->
+    <sys:String x:Key="OneWay_Title">One-Way Bindings (OneWay / OneWayToSource)</sys:String>
+    <sys:String x:Key="OneWay_TypesTitle">Two types of one-way binding</sys:String>
+    <sys:String x:Key="OneWay_Desc">VM → UI. Element only displays data from VM. Suitable for TextBlock, ProgressBar, Label.</sys:String>
+    <sys:String x:Key="OneWayToSource_Desc">UI → VM. Element only writes data to VM. VM does not send the value back to UI.</sys:String>
+    <sys:String x:Key="OneWay_SectionTitle">OneWay: ViewModel → UI</sys:String>
+    <sys:String x:Key="OneWay_SectionHint">Button changes VM. UI (OneWay) updates. Text cannot be changed manually:</sys:String>
+    <sys:String x:Key="OneWay_ProgressHint">Progress (updated by timer every second):</sys:String>
+    <sys:String x:Key="OneWay_Button">Update text from VM</sys:String>
+    <sys:String x:Key="OneWayToSource_Title">OneWayToSource: UI → ViewModel</sys:String>
+    <sys:String x:Key="OneWayToSource_Hint">Enter text — it is written to VM. VM does not send it back to TextBox (so the field is not cleared from code):</sys:String>
+    <sys:String x:Key="OneWayToSource_VMValue">Value in ViewModel (OneWay from VM):</sys:String>
+
+    <!-- Triggers -->
+    <sys:String x:Key="Triggers_Title">Triggers</sys:String>
+    <sys:String x:Key="Triggers_TypesTitle">Types of WPF Triggers</sys:String>
+    <sys:String x:Key="Triggers_TypesDesc">• Trigger — reacts to the element's own property (IsMouseOver, IsFocused)&#10;• DataTrigger — reacts to a binding value from ViewModel&#10;• MultiDataTrigger — fires when multiple conditions are met simultaneously</sys:String>
+    <sys:String x:Key="Triggers_1Title">1. Trigger — element property</sys:String>
+    <sys:String x:Key="Triggers_1Hint">Hover over the card — Trigger reacts to IsMouseOver:</sys:String>
+    <sys:String x:Key="Triggers_HoverText">Hover here</sys:String>
+    <sys:String x:Key="Triggers_HoverActive">Trigger fired! ✓</sys:String>
+    <sys:String x:Key="Triggers_2Title">2. DataTrigger — value from ViewModel</sys:String>
+    <sys:String x:Key="Triggers_2Hint">Type the word «ошибка» — DataTrigger will change the style:</sys:String>
+    <sys:String x:Key="Triggers_OK">✓ All is well</sys:String>
+    <sys:String x:Key="Triggers_Error">✗ Error detected!</sys:String>
+    <sys:String x:Key="Triggers_ScoreHint">DataTrigger + converter: score changes badge color:</sys:String>
+    <sys:String x:Key="Triggers_ScoreSuffix"> points</sys:String>
+    <sys:String x:Key="Triggers_3Title">3. MultiDataTrigger — multiple conditions</sys:String>
+    <sys:String x:Key="Triggers_3Hint">Check both checkboxes simultaneously — MultiDataTrigger fires:</sys:String>
+    <sys:String x:Key="Triggers_Bold">Bold</sys:String>
+    <sys:String x:Key="Triggers_Italic">Italic</sys:String>
+    <sys:String x:Key="Triggers_Sample">Sample text</sys:String>
+
+</ResourceDictionary>
