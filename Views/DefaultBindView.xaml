@@ -45,7 +45,7 @@
                             Value="{Binding SliderValue}"
                             Width="350" HorizontalAlignment="Left"/>
                     <TextBlock Margin="0,8,0,0">
-                        <Run Text="{Binding [Default_SliderValue], Source={x:Static loc:Localizer.Instance}}"/>
+                        <Run Text="{Binding [Default_SliderValue], Source={x:Static loc:Localizer.Instance}, Mode=OneWay}"/>
                         <Run Text="{Binding SliderValue, Mode=OneWay}"
                              FontWeight="Bold" Foreground="{StaticResource PrimaryBrush}"/>
                     </TextBlock>
@@ -65,7 +65,7 @@
                     <CheckBox IsChecked="{Binding IsChecked}"
                               Content="{Binding [Default_CheckContent], Source={x:Static loc:Localizer.Instance}}"/>
                     <TextBlock Style="{StaticResource ResultText}" Margin="0,8,0,0">
-                        <Run Text="{Binding [Default_Status], Source={x:Static loc:Localizer.Instance}}"/>
+                        <Run Text="{Binding [Default_Status], Source={x:Static loc:Localizer.Instance}, Mode=OneWay}"/>
                         <Run Text="{Binding CheckStatus, Mode=OneWay}" FontWeight="Bold"/>
                     </TextBlock>
                 </StackPanel>

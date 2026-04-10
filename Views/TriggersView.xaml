@@ -137,7 +137,7 @@
                         </Border.Style>
                         <TextBlock Foreground="White" FontWeight="Bold" HorizontalAlignment="Center">
                             <Run Text="{Binding Score, StringFormat={}{0:F0}, Mode=OneWay}"/>
-                            <Run Text="{Binding [Triggers_ScoreSuffix], Source={x:Static loc:Localizer.Instance}}"/>
+                            <Run Text="{Binding [Triggers_ScoreSuffix], Source={x:Static loc:Localizer.Instance}, Mode=OneWay}"/>
                         </TextBlock>
                     </Border>
                 </StackPanel>
