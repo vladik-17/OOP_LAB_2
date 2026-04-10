@@ -5,35 +5,34 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24">
         <StackPanel MaxWidth="700" HorizontalAlignment="Left">
 
-            <TextBlock Style="{StaticResource PageTitle}" Text="Двухсторонняя привязка (TwoWay)"/>
+            <TextBlock Style="{StaticResource PageTitle}" Text="{DynamicResource TwoWay_Title}"/>
 
-            <!-- Описание -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="Как работает TwoWay?"/>
-                    <TextBlock TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}">
-                        Изменения передаются в обе стороны: UI → ViewModel и ViewModel → UI.
-                        Если одно свойство привязано к нескольким элементам, они все синхронизируются.
-                    </TextBlock>
+                    <TextBlock Style="{StaticResource CardTitle}" Text="{DynamicResource TwoWay_HowTitle}"/>
+                    <TextBlock TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}"
+                               Text="{DynamicResource TwoWay_HowDesc}"/>
                 </StackPanel>
             </Border>
 
             <!-- Два TextBox — одно свойство -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="Несколько TextBox — одно свойство"/>
-                    <TextBlock Style="{StaticResource Label}"
-                               Text="Оба поля привязаны к SharedText. Измените одно — обновится второе после снятия фокуса:"/>
+                    <TextBlock Style="{StaticResource CardTitle}" Text="{DynamicResource TwoWay_MultiTitle}"/>
+                    <TextBlock Style="{StaticResource Label}" Text="{DynamicResource TwoWay_MultiHint}"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="16"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox Grid.Column="0" Text="{Binding SharedText, Mode=TwoWay}" ToolTip="Поле 1"/>
-                        <TextBox Grid.Column="2" Text="{Binding SharedText, Mode=TwoWay}" ToolTip="Поле 2"/>
+                        <TextBox Grid.Column="0" Text="{Binding SharedText, Mode=TwoWay}"
+                                 ToolTip="{DynamicResource TwoWay_Field1}"/>
+                        <TextBox Grid.Column="2" Text="{Binding SharedText, Mode=TwoWay}"
+                                 ToolTip="{DynamicResource TwoWay_Field2}"/>
                     </Grid>
-                    <TextBlock Style="{StaticResource Label}" Margin="0,10,0,4" Text="Значение в ViewModel:"/>
+                    <TextBlock Style="{StaticResource Label}" Margin="0,10,0,4"
+                               Text="{DynamicResource TwoWay_VMValue}"/>
                     <TextBlock Style="{StaticResource ResultText}"
                                Text="{Binding SharedText, Mode=OneWay}" FontWeight="SemiBold"/>
                 </StackPanel>
@@ -42,8 +41,8 @@
             <!-- Slider ↔ TextBox -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="Slider ↔ TextBox"/>
-                    <TextBlock Style="{StaticResource Label}" Text="Двигайте ползунок или введите число в поле:"/>
+                    <TextBlock Style="{StaticResource CardTitle}" Text="{DynamicResource TwoWay_SliderTitle}"/>
+                    <TextBlock Style="{StaticResource Label}" Text="{DynamicResource TwoWay_SliderHint}"/>
                     <Grid Margin="0,4,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -66,8 +65,8 @@
             <!-- ComboBox с цветом -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="ComboBox — выбор цвета"/>
-                    <TextBlock Style="{StaticResource Label}" Text="Выберите цвет из списка — прямоугольник изменит цвет:"/>
+                    <TextBlock Style="{StaticResource CardTitle}" Text="{DynamicResource TwoWay_ComboTitle}"/>
+                    <TextBlock Style="{StaticResource Label}" Text="{DynamicResource TwoWay_ComboHint}"/>
                     <ComboBox ItemsSource="{Binding Colors}"
                               SelectedItem="{Binding SelectedColor, Mode=TwoWay}"
                               Width="200" HorizontalAlignment="Left"/>

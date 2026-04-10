@@ -23,39 +23,37 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24">
         <StackPanel MaxWidth="700" HorizontalAlignment="Left">
 
-            <TextBlock Style="{StaticResource PageTitle}" Text="Триггеры (Triggers)"/>
+            <TextBlock Style="{StaticResource PageTitle}" Text="{DynamicResource Triggers_Title}"/>
 
-            <!-- Описание -->
+            <!-- Описание видов триггеров -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="Виды триггеров в WPF"/>
-                    <TextBlock TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}" LineHeight="22">
-                        • Trigger — реагирует на свойство самого элемента (IsMouseOver, IsFocused)&#10;
-                        • DataTrigger — реагирует на значение привязки к ViewModel&#10;
-                        • MultiDataTrigger — срабатывает при нескольких условиях одновременно
-                    </TextBlock>
+                    <TextBlock Style="{StaticResource CardTitle}" Text="{DynamicResource Triggers_TypesTitle}"/>
+                    <TextBlock TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}" LineHeight="22"
+                               Text="{DynamicResource Triggers_TypesDesc}"/>
                 </StackPanel>
             </Border>
 
             <!-- 1. Trigger -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="1. Trigger — свойство элемента"/>
-                    <TextBlock Style="{StaticResource Label}"
-                               Text="Наведите мышь на карточку — Trigger реагирует на IsMouseOver:"/>
+                    <TextBlock Style="{StaticResource CardTitle}" Text="{DynamicResource Triggers_1Title}"/>
+                    <TextBlock Style="{StaticResource Label}" Text="{DynamicResource Triggers_1Hint}"/>
                     <Border Style="{StaticResource HoverCard}" Width="280"
                             HorizontalAlignment="Left" Margin="0,8,0,0">
                         <TextBlock HorizontalAlignment="Center" FontSize="14">
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="Foreground" Value="#3F51B5"/>
-                                    <Setter Property="Text" Value="Наведите курсор сюда"/>
+                                    <!-- Текст по умолчанию из словаря -->
+                                    <Setter Property="Text" Value="{DynamicResource Triggers_HoverText}"/>
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding IsMouseOver,
                                             RelativeSource={RelativeSource AncestorType=Border}}"
                                                      Value="True">
                                             <Setter Property="Foreground" Value="White"/>
-                                            <Setter Property="Text" Value="Trigger сработал! ✓"/>
+                                            <!-- Текст при наведении из словаря -->
+                                            <Setter Property="Text" Value="{DynamicResource Triggers_HoverActive}"/>
                                         </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
@@ -68,9 +66,8 @@
             <!-- 2. DataTrigger -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="2. DataTrigger — значение из ViewModel"/>
-                    <TextBlock Style="{StaticResource Label}"
-                               Text="Введите слово «ошибка» — DataTrigger изменит оформление:"/>
+                    <TextBlock Style="{StaticResource CardTitle}" Text="{DynamicResource Triggers_2Title}"/>
+                    <TextBlock Style="{StaticResource Label}" Text="{DynamicResource Triggers_2Hint}"/>
                     <TextBox Text="{Binding InputText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              Width="300" HorizontalAlignment="Left"/>
 
@@ -89,12 +86,12 @@
                         <TextBlock HorizontalAlignment="Center">
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock">
-                                    <Setter Property="Text" Value="✓ Всё в порядке"/>
+                                    <Setter Property="Text" Value="{DynamicResource Triggers_OK}"/>
                                     <Setter Property="Foreground" Value="#2E7D32"/>
                                     <Setter Property="FontWeight" Value="Normal"/>
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding InputText}" Value="ошибка">
-                                            <Setter Property="Text" Value="✗ Обнаружена ошибка!"/>
+                                            <Setter Property="Text" Value="{DynamicResource Triggers_Error}"/>
                                             <Setter Property="Foreground" Value="#C62828"/>
                                             <Setter Property="FontWeight" Value="Bold"/>
                                         </DataTrigger>
@@ -106,7 +103,7 @@
 
                     <!-- DataTrigger + конвертер -->
                     <TextBlock Style="{StaticResource Label}" Margin="0,16,0,4"
-                               Text="DataTrigger + конвертер: оценка меняет цвет бейджа:"/>
+                               Text="{DynamicResource Triggers_ScoreHint}"/>
                     <Slider Minimum="0" Maximum="100"
                             Value="{Binding Score, Mode=TwoWay}"
                             Width="300" HorizontalAlignment="Left"/>
@@ -129,7 +126,7 @@
                         </Border.Style>
                         <TextBlock Foreground="White" FontWeight="Bold" HorizontalAlignment="Center">
                             <Run Text="{Binding Score, StringFormat={}{0:F0}, Mode=OneWay}"/>
-                            <Run Text=" баллов"/>
+                            <Run Text="{DynamicResource Triggers_ScoreSuffix}"/>
                         </TextBlock>
                     </Border>
                 </StackPanel>
@@ -138,11 +135,12 @@
             <!-- 3. MultiDataTrigger -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="3. MultiDataTrigger — несколько условий"/>
-                    <TextBlock Style="{StaticResource Label}"
-                               Text="Отметьте оба флажка одновременно — сработает MultiDataTrigger:"/>
-                    <CheckBox IsChecked="{Binding IsBold}" Content="Жирный" Margin="0,6,0,2"/>
-                    <CheckBox IsChecked="{Binding IsItalic}" Content="Курсив"/>
+                    <TextBlock Style="{StaticResource CardTitle}" Text="{DynamicResource Triggers_3Title}"/>
+                    <TextBlock Style="{StaticResource Label}" Text="{DynamicResource Triggers_3Hint}"/>
+                    <CheckBox IsChecked="{Binding IsBold}"
+                              Content="{DynamicResource Triggers_Bold}" Margin="0,6,0,2"/>
+                    <CheckBox IsChecked="{Binding IsItalic}"
+                              Content="{DynamicResource Triggers_Italic}"/>
 
                     <Border Margin="0,12,0,0" Padding="16" CornerRadius="6"
                             Width="300" HorizontalAlignment="Left">
@@ -161,7 +159,8 @@
                                 </Style.Triggers>
                             </Style>
                         </Border.Style>
-                        <TextBlock Text="Образец текста" HorizontalAlignment="Center" FontSize="16">
+                        <TextBlock HorizontalAlignment="Center" FontSize="16"
+                                   Text="{DynamicResource Triggers_Sample}">
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="FontWeight" Value="Normal"/>

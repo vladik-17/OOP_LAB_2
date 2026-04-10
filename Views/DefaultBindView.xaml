@@ -5,45 +5,39 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24">
         <StackPanel MaxWidth="700" HorizontalAlignment="Left">
 
-            <TextBlock Style="{StaticResource PageTitle}" Text="Привязка по умолчанию (Default)"/>
+            <TextBlock Style="{StaticResource PageTitle}" Text="{DynamicResource Default_Title}"/>
 
-            <!-- Описание -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="Что такое Default-привязка?"/>
-                    <TextBlock TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}">
-                        Режим привязки по умолчанию зависит от элемента управления.
-                        Для TextBox — TwoWay (обновляется при потере фокуса).
-                        Для Slider — TwoWay (мгновенно).
-                        Для CheckBox.IsChecked — TwoWay.
-                        Для TextBlock — OneWay (только чтение).
-                    </TextBlock>
+                    <TextBlock Style="{StaticResource CardTitle}" Text="{DynamicResource Default_WhatTitle}"/>
+                    <TextBlock TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}"
+                               Text="{DynamicResource Default_WhatDesc}"/>
                 </StackPanel>
             </Border>
 
             <!-- TextBox -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="TextBox — Default (TwoWay, LostFocus)"/>
-                    <TextBlock Style="{StaticResource Label}" Text="Введите текст и нажмите Tab или кликните в другое место:"/>
+                    <TextBlock Style="{StaticResource CardTitle}" Text="{DynamicResource Default_TextBoxTitle}"/>
+                    <TextBlock Style="{StaticResource Label}" Text="{DynamicResource Default_TextBoxHint}"/>
                     <TextBox Text="{Binding InputText}" Width="350" HorizontalAlignment="Left"/>
-                    <TextBlock Style="{StaticResource Label}" Margin="0,12,0,4" Text="Значение в ViewModel:"/>
+                    <TextBlock Style="{StaticResource Label}" Margin="0,12,0,4"
+                               Text="{DynamicResource Default_VMValue}"/>
                     <TextBlock Style="{StaticResource ResultText}"
-                               Text="{Binding InputText, Mode=OneWay}"
-                               FontWeight="SemiBold"/>
+                               Text="{Binding InputText, Mode=OneWay}" FontWeight="SemiBold"/>
                 </StackPanel>
             </Border>
 
             <!-- Slider -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="Slider — Default (TwoWay)"/>
-                    <TextBlock Style="{StaticResource Label}" Text="Перемещайте ползунок:"/>
+                    <TextBlock Style="{StaticResource CardTitle}" Text="{DynamicResource Default_SliderTitle}"/>
+                    <TextBlock Style="{StaticResource Label}" Text="{DynamicResource Default_SliderHint}"/>
                     <Slider Minimum="0" Maximum="100"
                             Value="{Binding SliderValue}"
                             Width="350" HorizontalAlignment="Left"/>
                     <TextBlock Margin="0,8,0,0">
-                        <Run Text="Значение: "/>
+                        <Run Text="{DynamicResource Default_SliderValue}"/>
                         <Run Text="{Binding SliderValue, Mode=OneWay}"
                              FontWeight="Bold" Foreground="{StaticResource PrimaryBrush}"/>
                     </TextBlock>
@@ -58,10 +52,10 @@
             <!-- CheckBox -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="CheckBox — Default (TwoWay)"/>
-                    <CheckBox IsChecked="{Binding IsChecked}" Content="Активировать"/>
+                    <TextBlock Style="{StaticResource CardTitle}" Text="{DynamicResource Default_CheckTitle}"/>
+                    <CheckBox IsChecked="{Binding IsChecked}" Content="{DynamicResource Default_CheckContent}"/>
                     <TextBlock Style="{StaticResource ResultText}" Margin="0,8,0,0">
-                        <Run Text="Статус: "/>
+                        <Run Text="{DynamicResource Default_Status}"/>
                         <Run Text="{Binding CheckStatus, Mode=OneWay}" FontWeight="Bold"/>
                     </TextBlock>
                 </StackPanel>

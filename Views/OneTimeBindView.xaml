@@ -5,44 +5,37 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24">
         <StackPanel MaxWidth="700" HorizontalAlignment="Left">
 
-            <TextBlock Style="{StaticResource PageTitle}" Text="Одноразовая привязка (OneTime)"/>
+            <TextBlock Style="{StaticResource PageTitle}" Text="{DynamicResource OneTime_Title}"/>
 
-            <!-- Описание -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="Как работает OneTime?"/>
-                    <TextBlock TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}">
-                        Значение читается из ViewModel один раз — при инициализации элемента.
-                        Последующие изменения в VM не передаются в UI. Используется для
-                        статичных данных: заголовков, начальных значений, неизменяемых списков.
-                    </TextBlock>
+                    <TextBlock Style="{StaticResource CardTitle}" Text="{DynamicResource OneTime_HowTitle}"/>
+                    <TextBlock TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}"
+                               Text="{DynamicResource OneTime_HowDesc}"/>
                 </StackPanel>
             </Border>
 
             <!-- Сравнение OneTime vs OneWay -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="Сравнение: OneTime vs OneWay"/>
-                    <TextBlock Style="{StaticResource Label}"
-                               Text="Нажмите кнопку — ViewModel обновится. Посмотрите, какие поля изменятся:"/>
+                    <TextBlock Style="{StaticResource CardTitle}" Text="{DynamicResource OneTime_CompareTitle}"/>
+                    <TextBlock Style="{StaticResource Label}" Text="{DynamicResource OneTime_CompareHint}"/>
 
-                    <!-- OneTime — не обновляется -->
                     <TextBlock Style="{StaticResource SubTitle}" Margin="0,12,0,4"
-                               Text="OneTime (не обновляется после загрузки):"/>
+                               Text="{DynamicResource OneTime_Label}"/>
                     <TextBlock Style="{StaticResource ResultText}"
                                Text="{Binding DynamicText, Mode=OneTime}"
                                Foreground="#E53935"/>
 
-                    <!-- OneWay — обновляется -->
                     <TextBlock Style="{StaticResource SubTitle}" Margin="0,12,0,4"
-                               Text="OneWay (обновляется при каждом изменении VM):"/>
+                               Text="{DynamicResource OneWay_CompareLabel}"/>
                     <TextBlock Style="{StaticResource ResultText}"
                                Text="{Binding DynamicText, Mode=OneWay}"
                                Foreground="#43A047"/>
 
                     <Button Style="{StaticResource PrimaryButton}"
                             Command="{Binding ReloadCommand}"
-                            Content="Обновить ViewModel"
+                            Content="{DynamicResource OneTime_Button}"
                             HorizontalAlignment="Left"
                             Margin="0,16,0,0"/>
                 </StackPanel>
@@ -51,13 +44,9 @@
             <!-- Когда использовать -->
             <Border Style="{StaticResource Card}">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource CardTitle}" Text="Когда применять OneTime?"/>
-                    <TextBlock TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}" LineHeight="22">
-                        • Заголовки и подписи, которые не меняются во время работы&#10;
-                        • Начальные значения из конфигурации или БД&#10;
-                        • Источники данных ComboBox/ListBox с неизменяемым списком&#10;
-                        • Экономит ресурсы: нет подписки на INotifyPropertyChanged
-                    </TextBlock>
+                    <TextBlock Style="{StaticResource CardTitle}" Text="{DynamicResource OneTime_WhenTitle}"/>
+                    <TextBlock TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}" LineHeight="22"
+                               Text="{DynamicResource OneTime_WhenDesc}"/>
                 </StackPanel>
             </Border>
 
