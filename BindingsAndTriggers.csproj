@@ -7,6 +7,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <RootNamespace>BindingsAndTriggers</RootNamespace>
+    <!-- Отключаем авто-генерацию AssemblyInfo — WPF temp project иначе создаёт дубликаты при повторных сборках -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,9 +21,11 @@
     <!-- Явные логические имена для ResourceManager (SDK включает .resx автоматически) -->
     <EmbeddedResource Update="Resources\Strings.resx">
       <LogicalName>BindingsAndTriggers.Resources.Strings.resources</LogicalName>
+      <WithCulture>false</WithCulture>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Strings.en.resx">
       <LogicalName>BindingsAndTriggers.Resources.Strings.en.resources</LogicalName>
+      <WithCulture>false</WithCulture>
     </EmbeddedResource>
   </ItemGroup>
 
