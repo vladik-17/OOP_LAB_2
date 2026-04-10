@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppTitle" xml:space="preserve"><value>Lab 1 Petrov V.A 24.16</value></data>
+  <data name="AppSubtitle" xml:space="preserve"><value> — bindings and triggers</value></data>
+  <data name="LangLabel" xml:space="preserve"><value>Language:</value></data>
+  <data name="Tab_Default" xml:space="preserve"><value>Default</value></data>
+  <data name="Tab_TwoWay" xml:space="preserve"><value>Two-Way</value></data>
+  <data name="Tab_OneTime" xml:space="preserve"><value>One-Time</value></data>
+  <data name="Tab_OneWay" xml:space="preserve"><value>One-Way</value></data>
+  <data name="Tab_Triggers" xml:space="preserve"><value>Triggers</value></data>
+  <data name="Default_Title" xml:space="preserve"><value>Default Binding</value></data>
+  <data name="Default_WhatTitle" xml:space="preserve"><value>What is Default binding?</value></data>
+  <data name="Default_WhatDesc" xml:space="preserve"><value>The default binding mode depends on the control.
+TextBox — TwoWay (updates on focus loss).
+Slider — TwoWay (instant).
+CheckBox.IsChecked — TwoWay.
+TextBlock — OneWay (read-only).</value></data>
+  <data name="Default_TextBoxTitle" xml:space="preserve"><value>TextBox — Default (TwoWay, LostFocus)</value></data>
+  <data name="Default_TextBoxHint" xml:space="preserve"><value>Enter text and press Tab or click elsewhere:</value></data>
+  <data name="Default_VMValue" xml:space="preserve"><value>Value in ViewModel:</value></data>
+  <data name="Default_SliderTitle" xml:space="preserve"><value>Slider — Default (TwoWay)</value></data>
+  <data name="Default_SliderHint" xml:space="preserve"><value>Move the slider:</value></data>
+  <data name="Default_SliderValue" xml:space="preserve"><value>Value: </value></data>
+  <data name="Default_CheckTitle" xml:space="preserve"><value>CheckBox — Default (TwoWay)</value></data>
+  <data name="Default_CheckContent" xml:space="preserve"><value>Activate</value></data>
+  <data name="Default_Status" xml:space="preserve"><value>Status: </value></data>
+  <data name="Status_Checked" xml:space="preserve"><value>Checked</value></data>
+  <data name="Status_Unchecked" xml:space="preserve"><value>Unchecked</value></data>
+  <data name="TwoWay_Title" xml:space="preserve"><value>Two-Way Binding (TwoWay)</value></data>
+  <data name="TwoWay_HowTitle" xml:space="preserve"><value>How does TwoWay work?</value></data>
+  <data name="TwoWay_HowDesc" xml:space="preserve"><value>Changes flow in both directions: UI → ViewModel and ViewModel → UI.
+If one property is bound to multiple elements, they all stay in sync.</value></data>
+  <data name="TwoWay_MultiTitle" xml:space="preserve"><value>Multiple TextBoxes — one property</value></data>
+  <data name="TwoWay_MultiHint" xml:space="preserve"><value>Both fields are bound to SharedText. Change one — the other updates on focus loss:</value></data>
+  <data name="TwoWay_Field1" xml:space="preserve"><value>Field 1</value></data>
+  <data name="TwoWay_Field2" xml:space="preserve"><value>Field 2</value></data>
+  <data name="TwoWay_VMValue" xml:space="preserve"><value>Value in ViewModel:</value></data>
+  <data name="TwoWay_SliderTitle" xml:space="preserve"><value>Slider ↔ TextBox</value></data>
+  <data name="TwoWay_SliderHint" xml:space="preserve"><value>Move the slider or type a number:</value></data>
+  <data name="TwoWay_ComboTitle" xml:space="preserve"><value>ComboBox — color selection</value></data>
+  <data name="TwoWay_ComboHint" xml:space="preserve"><value>Select a color — the rectangle will change color:</value></data>
+  <data name="OneTime_Title" xml:space="preserve"><value>One-Time Binding (OneTime)</value></data>
+  <data name="OneTime_HowTitle" xml:space="preserve"><value>How does OneTime work?</value></data>
+  <data name="OneTime_HowDesc" xml:space="preserve"><value>The value is read from the ViewModel once — at element initialization.
+Subsequent VM changes are not propagated to the UI. Use for
+static data: titles, initial values, immutable lists.</value></data>
+  <data name="OneTime_CompareTitle" xml:space="preserve"><value>Comparison: OneTime vs OneWay</value></data>
+  <data name="OneTime_CompareHint" xml:space="preserve"><value>Click the button — ViewModel will update. See which fields change:</value></data>
+  <data name="OneTime_Label" xml:space="preserve"><value>OneTime (does not update after load):</value></data>
+  <data name="OneWay_CompareLabel" xml:space="preserve"><value>OneWay (updates on every VM change):</value></data>
+  <data name="OneTime_Button" xml:space="preserve"><value>Update ViewModel</value></data>
+  <data name="OneTime_WhenTitle" xml:space="preserve"><value>When to use OneTime?</value></data>
+  <data name="OneTime_WhenDesc" xml:space="preserve"><value>• Titles and labels that don't change at runtime
+• Initial values from config or DB
+• ComboBox/ListBox data sources with immutable lists
+• Saves resources: no INotifyPropertyChanged subscription</value></data>
+  <data name="OneWay_Title" xml:space="preserve"><value>One-Way Bindings (OneWay / OneWayToSource)</value></data>
+  <data name="OneWay_TypesTitle" xml:space="preserve"><value>Two types of one-way binding</value></data>
+  <data name="OneWay_Desc" xml:space="preserve"><value>VM → UI. Element only displays data from VM. Suitable for TextBlock, ProgressBar, Label.</value></data>
+  <data name="OneWayToSource_Desc" xml:space="preserve"><value>UI → VM. Element only writes data to VM. VM does not send the value back to the UI.</value></data>
+  <data name="OneWay_SectionTitle" xml:space="preserve"><value>OneWay: ViewModel → UI</value></data>
+  <data name="OneWay_SectionHint" xml:space="preserve"><value>Button changes VM. UI (OneWay) updates. Text cannot be changed manually:</value></data>
+  <data name="OneWay_ProgressHint" xml:space="preserve"><value>Progress (updated by timer every second):</value></data>
+  <data name="OneWay_Button" xml:space="preserve"><value>Update text from VM</value></data>
+  <data name="OneWayToSource_Title" xml:space="preserve"><value>OneWayToSource: UI → ViewModel</value></data>
+  <data name="OneWayToSource_Hint" xml:space="preserve"><value>Type text — it is written to VM. VM does not send it back to TextBox (so the field is not cleared from code):</value></data>
+  <data name="OneWayToSource_VMValue" xml:space="preserve"><value>Value in ViewModel (OneWay from VM):</value></data>
+  <data name="Triggers_Title" xml:space="preserve"><value>Triggers</value></data>
+  <data name="Triggers_TypesTitle" xml:space="preserve"><value>Types of triggers in WPF</value></data>
+  <data name="Triggers_TypesDesc" xml:space="preserve"><value>• Trigger — reacts to an element's own property (IsMouseOver, IsFocused)
+• DataTrigger — reacts to a binding value from ViewModel
+• MultiDataTrigger — fires when multiple conditions are met simultaneously</value></data>
+  <data name="Triggers_1Title" xml:space="preserve"><value>1. Trigger — element property</value></data>
+  <data name="Triggers_1Hint" xml:space="preserve"><value>Hover over the card — Trigger reacts to IsMouseOver:</value></data>
+  <data name="Triggers_HoverText" xml:space="preserve"><value>Hover cursor here</value></data>
+  <data name="Triggers_HoverActive" xml:space="preserve"><value>Trigger fired! ✓</value></data>
+  <data name="Triggers_2Title" xml:space="preserve"><value>2. DataTrigger — value from ViewModel</value></data>
+  <data name="Triggers_2Hint" xml:space="preserve"><value>Type the word "error" — DataTrigger will change the style:</value></data>
+  <data name="Triggers_OK" xml:space="preserve"><value>✓ All good</value></data>
+  <data name="Triggers_Error" xml:space="preserve"><value>✗ Error detected!</value></data>
+  <data name="Triggers_ScoreHint" xml:space="preserve"><value>DataTrigger + converter: score changes badge color:</value></data>
+  <data name="Triggers_ScoreSuffix" xml:space="preserve"><value> points</value></data>
+  <data name="Triggers_3Title" xml:space="preserve"><value>3. MultiDataTrigger — multiple conditions</value></data>
+  <data name="Triggers_3Hint" xml:space="preserve"><value>Check both checkboxes at once — MultiDataTrigger will fire:</value></data>
+  <data name="Triggers_Bold" xml:space="preserve"><value>Bold</value></data>
+  <data name="Triggers_Italic" xml:space="preserve"><value>Italic</value></data>
+  <data name="Triggers_Sample" xml:space="preserve"><value>Sample text</value></data>
+</root>
