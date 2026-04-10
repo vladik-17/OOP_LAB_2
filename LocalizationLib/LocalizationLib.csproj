@@ -13,9 +13,11 @@
     <!-- Явные логические имена чтобы ResourceManager нашёл ресурсы -->
     <EmbeddedResource Update="Strings.ru.resx">
       <LogicalName>LocalizationLib.Strings.ru.resources</LogicalName>
+      <WithCulture>false</WithCulture>
     </EmbeddedResource>
     <EmbeddedResource Update="Strings.en.resx">
       <LogicalName>LocalizationLib.Strings.en.resources</LogicalName>
+      <WithCulture>false</WithCulture>
     </EmbeddedResource>
   </ItemGroup>
 

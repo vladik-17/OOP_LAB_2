@@ -18,4 +18,11 @@
     <ProjectReference Include="LocalizationLib\LocalizationLib.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- Исключаем исходники подпроекта из glob-захвата WPF temp project -->
+    <Compile Remove="LocalizationLib\**\*" />
+    <EmbeddedResource Remove="LocalizationLib\**\*" />
+    <None Remove="LocalizationLib\**\*" />
+  </ItemGroup>
+
 </Project>
