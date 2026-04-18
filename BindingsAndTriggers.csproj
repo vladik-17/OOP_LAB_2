@@ -7,11 +7,24 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <RootNamespace>BindingsAndTriggers</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
 
   <ItemGroup>
     <!-- Ветка б: CommunityToolkit.Mvvm генерирует VM через атрибуты -->
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="LocalizationLib\LocalizationLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Исключаем исходники подпроекта из glob-захвата WPF temp project -->
+    <Compile Remove="LocalizationLib\**\*" />
+    <EmbeddedResource Remove="LocalizationLib\**\*" />
+    <None Remove="LocalizationLib\**\*" />
   </ItemGroup>
 
 </Project>

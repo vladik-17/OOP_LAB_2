@@ -2,7 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:views="clr-namespace:BindingsAndTriggers.Views"
-        Title="Лабораторная 1 Петров В.А 24.16"
+        xmlns:lib="clr-namespace:LocalizationLib;assembly=LocalizationLib"
+        Title="{Binding [AppTitle], Source={x:Static lib:Translator.Instance}}"
         Width="900" Height="680"
         MinWidth="700" MinHeight="500"
         WindowStartupLocation="CenterScreen">
@@ -14,30 +15,43 @@
         </Grid.RowDefinitions>
 
         <Border Grid.Row="0" Background="{StaticResource PrimaryBrush}" Padding="20,12">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Лабораторная 1"
-                           Foreground="White" FontSize="20" FontWeight="Bold"
-                           VerticalAlignment="Center"/>
-                <TextBlock Text=" — привязки и триггеры"
-                           Foreground="#B0BEC5" FontSize="14"
-                           VerticalAlignment="Center" Margin="8,0,0,0"/>
-            </StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Text="{Binding [AppTitle], Source={x:Static lib:Translator.Instance}}"
+                               Foreground="White" FontSize="20" FontWeight="Bold"
+                               VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding [AppSubtitle], Source={x:Static lib:Translator.Instance}}"
+                               Foreground="#B0BEC5" FontSize="14"
+                               VerticalAlignment="Center" Margin="8,0,0,0"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding [LangLabel], Source={x:Static lib:Translator.Instance}}"
+                               Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <ComboBox ItemsSource="{Binding Languages}"
+                              SelectedItem="{Binding SelectedLanguage, Mode=TwoWay}"
+                              Width="90"/>
+                </StackPanel>
+            </Grid>
         </Border>
 
         <TabControl Grid.Row="1">
-            <TabItem Header="По умолчанию">
+            <TabItem Header="{Binding [Tab_Default], Source={x:Static lib:Translator.Instance}}">
                 <views:DefaultBindView DataContext="{Binding DefaultBind}"/>
             </TabItem>
-            <TabItem Header="Двухсторонняя">
+            <TabItem Header="{Binding [Tab_TwoWay], Source={x:Static lib:Translator.Instance}}">
                 <views:TwoWayBindView DataContext="{Binding TwoWayBind}"/>
             </TabItem>
-            <TabItem Header="Одноразовая">
+            <TabItem Header="{Binding [Tab_OneTime], Source={x:Static lib:Translator.Instance}}">
                 <views:OneTimeBindView DataContext="{Binding OneTimeBind}"/>
             </TabItem>
-            <TabItem Header="Односторонние">
+            <TabItem Header="{Binding [Tab_OneWay], Source={x:Static lib:Translator.Instance}}">
                 <views:OneWayBindView DataContext="{Binding OneWayBind}"/>
             </TabItem>
-            <TabItem Header="Триггеры">
+            <TabItem Header="{Binding [Tab_Triggers], Source={x:Static lib:Translator.Instance}}">
                 <views:TriggersView DataContext="{Binding Triggers}"/>
             </TabItem>
         </TabControl>

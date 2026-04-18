@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="AppTitle" xml:space="preserve"><value>Лабораторная 1 Петров В.А 24.16</value></data>
+  <data name="AppSubtitle" xml:space="preserve"><value> — привязки и триггеры</value></data>
+  <data name="LangLabel" xml:space="preserve"><value>Язык:</value></data>
+  <data name="Tab_Default" xml:space="preserve"><value>По умолчанию</value></data>
+  <data name="Tab_TwoWay" xml:space="preserve"><value>Двухсторонняя</value></data>
+  <data name="Tab_OneTime" xml:space="preserve"><value>Одноразовая</value></data>
+  <data name="Tab_OneWay" xml:space="preserve"><value>Односторонние</value></data>
+  <data name="Tab_Triggers" xml:space="preserve"><value>Триггеры</value></data>
+  <data name="Default_Title" xml:space="preserve"><value>Привязка по умолчанию (Default)</value></data>
+  <data name="Default_WhatTitle" xml:space="preserve"><value>Что такое Default-привязка?</value></data>
+  <data name="Default_WhatDesc" xml:space="preserve"><value>Режим привязки по умолчанию зависит от элемента управления.
+Для TextBox — TwoWay (обновляется при потере фокуса).
+Для Slider — TwoWay (мгновенно).
+Для CheckBox.IsChecked — TwoWay.
+Для TextBlock — OneWay (только чтение).</value></data>
+  <data name="Default_TextBoxTitle" xml:space="preserve"><value>TextBox — Default (TwoWay, LostFocus)</value></data>
+  <data name="Default_TextBoxHint" xml:space="preserve"><value>Введите текст и нажмите Tab или кликните в другое место:</value></data>
+  <data name="Default_VMValue" xml:space="preserve"><value>Значение в ViewModel:</value></data>
+  <data name="Default_SliderTitle" xml:space="preserve"><value>Slider — Default (TwoWay)</value></data>
+  <data name="Default_SliderHint" xml:space="preserve"><value>Перемещайте ползунок:</value></data>
+  <data name="Default_SliderValue" xml:space="preserve"><value>Значение: </value></data>
+  <data name="Default_CheckTitle" xml:space="preserve"><value>CheckBox — Default (TwoWay)</value></data>
+  <data name="Default_CheckContent" xml:space="preserve"><value>Активировать</value></data>
+  <data name="Default_Status" xml:space="preserve"><value>Статус: </value></data>
+  <data name="Status_Checked" xml:space="preserve"><value>Отмечено</value></data>
+  <data name="Status_Unchecked" xml:space="preserve"><value>Не отмечено</value></data>
+  <data name="TwoWay_Title" xml:space="preserve"><value>Двухсторонняя привязка (TwoWay)</value></data>
+  <data name="TwoWay_HowTitle" xml:space="preserve"><value>Как работает TwoWay?</value></data>
+  <data name="TwoWay_HowDesc" xml:space="preserve"><value>Изменения передаются в обе стороны: UI → ViewModel и ViewModel → UI.
+Если одно свойство привязано к нескольким элементам, они все синхронизируются.</value></data>
+  <data name="TwoWay_MultiTitle" xml:space="preserve"><value>Несколько TextBox — одно свойство</value></data>
+  <data name="TwoWay_MultiHint" xml:space="preserve"><value>Оба поля привязаны к SharedText. Измените одно — обновится второе после снятия фокуса:</value></data>
+  <data name="TwoWay_Field1" xml:space="preserve"><value>Поле 1</value></data>
+  <data name="TwoWay_Field2" xml:space="preserve"><value>Поле 2</value></data>
+  <data name="TwoWay_VMValue" xml:space="preserve"><value>Значение в ViewModel:</value></data>
+  <data name="TwoWay_SliderTitle" xml:space="preserve"><value>Slider ↔ TextBox</value></data>
+  <data name="TwoWay_SliderHint" xml:space="preserve"><value>Двигайте ползунок или введите число в поле:</value></data>
+  <data name="TwoWay_ComboTitle" xml:space="preserve"><value>ComboBox — выбор цвета</value></data>
+  <data name="TwoWay_ComboHint" xml:space="preserve"><value>Выберите цвет из списка — прямоугольник изменит цвет:</value></data>
+  <data name="OneTime_Title" xml:space="preserve"><value>Одноразовая привязка (OneTime)</value></data>
+  <data name="OneTime_HowTitle" xml:space="preserve"><value>Как работает OneTime?</value></data>
+  <data name="OneTime_HowDesc" xml:space="preserve"><value>Значение читается из ViewModel один раз — при инициализации элемента.
+Последующие изменения в VM не передаются в UI. Используется для
+статичных данных: заголовков, начальных значений, неизменяемых списков.</value></data>
+  <data name="OneTime_CompareTitle" xml:space="preserve"><value>Сравнение: OneTime vs OneWay</value></data>
+  <data name="OneTime_CompareHint" xml:space="preserve"><value>Нажмите кнопку — ViewModel обновится. Посмотрите, какие поля изменятся:</value></data>
+  <data name="OneTime_Label" xml:space="preserve"><value>OneTime (не обновляется после загрузки):</value></data>
+  <data name="OneWay_CompareLabel" xml:space="preserve"><value>OneWay (обновляется при каждом изменении VM):</value></data>
+  <data name="OneTime_Button" xml:space="preserve"><value>Обновить ViewModel</value></data>
+  <data name="OneTime_WhenTitle" xml:space="preserve"><value>Когда применять OneTime?</value></data>
+  <data name="OneTime_WhenDesc" xml:space="preserve"><value>• Заголовки и подписи, которые не меняются во время работы
+• Начальные значения из конфигурации или БД
+• Источники данных ComboBox/ListBox с неизменяемым списком
+• Экономит ресурсы: нет подписки на INotifyPropertyChanged</value></data>
+  <data name="OneWay_Title" xml:space="preserve"><value>Односторонние привязки (OneWay / OneWayToSource)</value></data>
+  <data name="OneWay_TypesTitle" xml:space="preserve"><value>Два варианта односторонней привязки</value></data>
+  <data name="OneWay_Desc" xml:space="preserve"><value>VM → UI. Элемент только отображает данные из VM. Подходит для TextBlock, ProgressBar, Label.</value></data>
+  <data name="OneWayToSource_Desc" xml:space="preserve"><value>UI → VM. Элемент только записывает данные в VM. VM не отправляет значение обратно в UI.</value></data>
+  <data name="OneWay_SectionTitle" xml:space="preserve"><value>OneWay: ViewModel → UI</value></data>
+  <data name="OneWay_SectionHint" xml:space="preserve"><value>Кнопка меняет VM. UI (OneWay) обновляется. Вручную текст изменить нельзя:</value></data>
+  <data name="OneWay_ProgressHint" xml:space="preserve"><value>Прогресс (обновляется таймером каждую секунду):</value></data>
+  <data name="OneWay_Button" xml:space="preserve"><value>Обновить текст из VM</value></data>
+  <data name="OneWayToSource_Title" xml:space="preserve"><value>OneWayToSource: UI → ViewModel</value></data>
+  <data name="OneWayToSource_Hint" xml:space="preserve"><value>Вводите текст — он записывается в VM. VM не отправляет его обратно в TextBox (поэтому поле не очищается из кода):</value></data>
+  <data name="OneWayToSource_VMValue" xml:space="preserve"><value>Значение в ViewModel (OneWay из VM):</value></data>
+  <data name="Triggers_Title" xml:space="preserve"><value>Триггеры (Triggers)</value></data>
+  <data name="Triggers_TypesTitle" xml:space="preserve"><value>Виды триггеров в WPF</value></data>
+  <data name="Triggers_TypesDesc" xml:space="preserve"><value>• Trigger — реагирует на свойство самого элемента (IsMouseOver, IsFocused)
+• DataTrigger — реагирует на значение привязки к ViewModel
+• MultiDataTrigger — срабатывает при нескольких условиях одновременно</value></data>
+  <data name="Triggers_1Title" xml:space="preserve"><value>1. Trigger — свойство элемента</value></data>
+  <data name="Triggers_1Hint" xml:space="preserve"><value>Наведите мышь на карточку — Trigger реагирует на IsMouseOver:</value></data>
+  <data name="Triggers_HoverText" xml:space="preserve"><value>Наведите курсор сюда</value></data>
+  <data name="Triggers_HoverActive" xml:space="preserve"><value>Trigger сработал! ✓</value></data>
+  <data name="Triggers_2Title" xml:space="preserve"><value>2. DataTrigger — значение из ViewModel</value></data>
+  <data name="Triggers_2Hint" xml:space="preserve"><value>Введите слово «ошибка» — DataTrigger изменит оформление:</value></data>
+  <data name="Triggers_OK" xml:space="preserve"><value>✓ Всё в порядке</value></data>
+  <data name="Triggers_Error" xml:space="preserve"><value>✗ Обнаружена ошибка!</value></data>
+  <data name="Triggers_ScoreHint" xml:space="preserve"><value>DataTrigger + конвертер: оценка меняет цвет бейджа:</value></data>
+  <data name="Triggers_ScoreSuffix" xml:space="preserve"><value> баллов</value></data>
+  <data name="Triggers_3Title" xml:space="preserve"><value>3. MultiDataTrigger — несколько условий</value></data>
+  <data name="Triggers_3Hint" xml:space="preserve"><value>Отметьте оба флажка одновременно — сработает MultiDataTrigger:</value></data>
+  <data name="Triggers_Bold" xml:space="preserve"><value>Жирный</value></data>
+  <data name="Triggers_Italic" xml:space="preserve"><value>Курсив</value></data>
+  <data name="Triggers_Sample" xml:space="preserve"><value>Образец текста</value></data>
+</root>
